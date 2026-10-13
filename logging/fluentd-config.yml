@@ -511,6 +511,7 @@ spec:
       # kics-scan ignore-line
       automountServiceAccountToken: true
       securityContext:
+        runAsNonRoot: true
         seccompProfile:
           type: RuntimeDefault
       tolerations:
@@ -539,7 +540,7 @@ spec:
             - name: FLUENT_ELASTICSEARCH_SCHEME
               value: "http"
             - name: FLUENT_UID
-              value: "0"
+              value: "999"
             - name: FLUENTD_SYSTEMD_CONF
               value: disable
             - name: ENVIRONMENT
